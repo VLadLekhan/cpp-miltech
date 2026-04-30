@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <cmath>
 
 int main(int argc, char** argv) {
     if (argc != 2) {
