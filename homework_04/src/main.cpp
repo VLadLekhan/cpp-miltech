@@ -72,23 +72,8 @@ int main(int argc, char** argv) {
         last_bl_ticks = bl_ticks;
         last_br_ticks = br_ticks;
 
+        std::cout << timestamp << " " << x << " " << y << " " << theta << std::endl;
     }
     
-
-    
-    
-
-    // TODO: implement wheel odometry for a 4-wheel differential-drive UGV.
-    //
-    // Parameters:
-    //   ticks_per_revolution = 1024
-    //   wheel_radius_m       = 0.3
-    //   wheelbase_m          = 1.0
-    //
-    // Input:  text file with 5 whitespace-separated numbers per line:
-    //         timestamp_ms fl_ticks fr_ticks bl_ticks br_ticks
-    // Output: same tabular format on stdout, starting from the second sample:
-    //         timestamp_ms x y theta
-
     return 0;
 }
