@@ -1,12 +1,25 @@
+#define _USE_MATH_DEFINES
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <string>
+
+const int ticks_per_revolution = 1024;
+const float wheel_radius_m = 0.3;
+const float wheelbase_m = 1.0;
+
 
 int main(int argc, char** argv) {
     if (argc != 2) {
         std::cerr << "usage: ugv_odometry <input_path>\n";
         return 1;
     }
+    
+    std::string input_path = argv[1];
+    std::ifstream file(input_path);
+
+
+
 
     // TODO: implement wheel odometry for a 4-wheel differential-drive UGV.
     //
