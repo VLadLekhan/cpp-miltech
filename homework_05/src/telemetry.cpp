@@ -39,11 +39,15 @@ int split_line(char line[], char* fields[], int max_fields) {
 }
 
 long parse_long(const char* text) {
+    if (text == nullptr){
+        return 0;
+    }
+
     char* end = nullptr;
     const long value = std::strtol(text, &end, 10);
 
     if (end == text) {
-        std::abort();
+        return 0;
     }
 
     return value;
@@ -58,7 +62,7 @@ double parse_double(const char* text) {
     const double value = std::strtod(text, &end);
 
     if (end == text) {
-        std::abort();
+        return 0.0;
     }
 
     return value;
@@ -81,8 +85,16 @@ Frame parse_frame(char line[]) {
 }
 
 double compute_frame_rate_hz(const Frame frames[], int frame_count) {
+
+    if (frame_count < 2){
+        return 0.0;
+    }
     const long elapsed_ms = frames[frame_count - 1].timestamp_ms - frames[0].timestamp_ms;
 
+    if (elapsed_ms <= 0){
+    return 0.0;
+    }
+ 
     return static_cast<double>((frame_count - 1) * 1000 / elapsed_ms);
 }
 
@@ -112,6 +124,9 @@ int read_frames(const char* path, Frame frames[], int max_frames) {
 
 Summary summarize(const Frame frames[], int frame_count) {
     Summary summary{};
+    if (frame_count <= 0){
+        return summary;
+    }
     summary.frames_total = frame_count;
     summary.frames_valid = frame_count;
     summary.voltage_min = frames[0].voltage_v;

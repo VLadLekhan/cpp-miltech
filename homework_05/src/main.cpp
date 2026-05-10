@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
         std::cerr << "usage: telemetry_check <input_path>\n";
         return 1;
     }
+   
 
     Frame frames[MAX_TELEMETRY_FRAMES];
     const int frame_count = read_frames(argv[1], frames, MAX_TELEMETRY_FRAMES);
