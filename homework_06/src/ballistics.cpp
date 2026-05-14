@@ -74,6 +74,9 @@ namespace ballistics {
            result.inter = {
             targetX - (targetX - xd) * (float)((h + accelerationPath) / D), 
             targetY - (targetY - yd) * (float)((h + accelerationPath) / D)};
+            result.has_inter_point = true;
+        } else {
+            result.has_inter_point = false;
         }
 
         result.fire = {

@@ -20,6 +20,7 @@ namespace ballistics {
     struct Calculation {
         Position fire;
         Position inter;
+        bool has_inter_point;
     };
 
     Calculation calculate_drop_point(
