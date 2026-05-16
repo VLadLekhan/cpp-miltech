@@ -43,6 +43,7 @@ int main(int argc, char* argv[])
       std::cout << result.fire.x << " " << result.fire.y << std::endl;
     }
     else {
+      output << result.fire.x << " " << result.fire.y << std::endl;
       std::cout << result.fire.x << " " << result.fire.y << std::endl;
     }
   }
