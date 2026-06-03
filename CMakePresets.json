@@ -16,7 +16,7 @@
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
-    {
+     {
       "name": "debug-asan",
       "displayName": "Debug + ASan/UBSan",
       "description": "Debug-asan build для діагностики витоків пам'яті",
@@ -24,28 +24,28 @@
       "binaryDir": "${sourceDir}/build/debug-asan",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_CXX_FLAGS": "-fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer"
+        "CMAKE_CXX_FLAGS" : "-fsanitize=address -fsanitize=undefined -fno-omit-frame-pointer"
       }
     },
     {
-      "name": "release",
-      "displayName": "Release",
-      "description": "Release buid: максимальна оптимізація коду за швидкістю (-O3), видалення налагоджувальної інформації для зменшення розміру бінарника.",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/release",
-      "cacheVariables": {
+        "name": "release",
+        "displayName": "Release",
+        "description": "Release buid: максимальна оптимізація коду за швидкістю (-O3), видалення налагоджувальної інформації для зменшення розміру бінарника.",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/release",
+        "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
-      }
+        }
     },
-    {
-      "name": "relwithdebinfo",
-      "displayName": "RelWithDebInfo",
-      "description": "RelWithDebInfo: Оптимізована збірка (-O2), яка зберігає налагоджувальну інформацію. Ідеально для пошуку багів, які проявляються лише на високій швидкості.",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build/relwithdebinfo",
-      "cacheVariables": {
+     {
+        "name": "relwithdebinfo",
+        "displayName": "RelWithDebInfo",
+        "description": "RelWithDebInfo: Оптимізована збірка (-O2), яка зберігає налагоджувальну інформацію. Ідеально для пошуку багів, які проявляються лише на високій швидкості.",
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/build/relwithdebinfo",
+        "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo"
-      }
+        }
     },
     {
       "name": "aarch64-debug",
