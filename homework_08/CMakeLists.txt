@@ -14,6 +14,8 @@ set(SOURCES
 src/main.cpp
 src/MissionProcessor.cpp
 src/providers/JsonTargetProvider.cpp
+src/solvers/AnalyticalSolver.cpp      
+src/config/FileConfigLoader.cpp
 )
 
 add_executable(homework_08_bin ${SOURCES})

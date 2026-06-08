@@ -1,0 +1,6 @@
+{
+    "zd" : 100.0,
+    "attack_speed" : 45.0,
+    "accelerationPath" : 10.0,
+    "ammo" : {"m" : 0.35, "d" : 0.07, "l" : 0.35}
+}

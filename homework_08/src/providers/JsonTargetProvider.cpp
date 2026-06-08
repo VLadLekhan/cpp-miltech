@@ -15,6 +15,7 @@ namespace homework_08 {
     
         if(!file.is_open()) {
           std::cerr << "File: " << file_path << " not open!" << std::endl;
+          return;
         }
 
         json data;
@@ -25,6 +26,8 @@ namespace homework_08 {
             t.x = item["x"].get<float>();
             t.y = item["y"].get<float>();
 
+            std::cout << "[DEBUG PROVIDER] Зчитано з JSON: X=" << t.x << ", Y=" << t.y << std::endl;
+
             json_targets.push_back(t);
         }
     }
@@ -33,8 +36,8 @@ namespace homework_08 {
         return static_cast<int>(json_targets.size());
     }
     
-    Target JsonTargetProvider::getTargetPosition(int idx) {
-        return json_targets[idx];
+    std::vector<Target> JsonTargetProvider::getTargetPosition(){
+        return json_targets;
     }
-
 }
+  

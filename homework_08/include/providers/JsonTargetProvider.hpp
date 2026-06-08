@@ -15,7 +15,7 @@ namespace homework_08 {
          public: 
          JsonTargetProvider (const std::string& filePath);
          int getTargetsCount() override;
-         Target getTargetPosition(int idx) override;
+         std::vector<Target> getTargetPosition() override;
          ~JsonTargetProvider() override {} ;
 
     };
