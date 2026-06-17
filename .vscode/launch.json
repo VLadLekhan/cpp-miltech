@@ -4,6 +4,27 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug homework_07: drone_mission",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/homework_07/homework_07_bin", 
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/homework_07",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "preLaunchTask": "CMake: configure and build",
+      "setupCommands": [
+        {
+          "description": "Увімкнути pretty-printing для STL типів у GDB.",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
       // Локальний debug demo-коду заняття 2.4. Використовує bad input,
       // щоб GDB зупинився на runtime crash.
       "name": "Debug demo 2.4: debug_probe",
