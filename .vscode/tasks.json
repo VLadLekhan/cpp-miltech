@@ -4,10 +4,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      // Default build task: Ctrl+Shift+B запускає debug preset, потім build.
+      // Default build task: Ctrl+Shift+B запускає CMake configure, потім build.
       "label": "CMake: configure and build",
       "type": "shell",
-      "command": "cmake --preset debug && cmake --build --preset debug",
+      "command": "cmake -S . -B build -G Ninja && cmake --build build",
       "group": {
         "kind": "build",
         "isDefault": true
