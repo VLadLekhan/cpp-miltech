@@ -32,6 +32,44 @@ __pycache__/
 core
 core.*
 
-# Метадані операційної системи не є частиною навчального репозиторію.
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+compile_commands.json
+
+# Build directories
+build/
+build-*/
+out/
+bin/
+obj/
+
+# IDE / editor
+.vs/
+.idea/
+*.swp
+*.swo
+*~
+.cache/
+
+# OS
 .DS_Store
 Thumbs.db

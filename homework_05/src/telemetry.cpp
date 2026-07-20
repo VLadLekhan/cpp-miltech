@@ -44,6 +44,17 @@ long parse_long(const char* text) {
 
     if (end == text) {
         std::abort();
+    if (text == nullptr){
+        std::cerr << "Error: Telemetry field is missing or empty." << std::endl;
+        std::exit(1);
+    }
+
+    char* end = nullptr;
+    const long value = std::strtol(text, &end, 10);                      
+
+    if (end == text) {
+        std::cerr << "Error: Telemetry field is missing or empty." << std::endl;
+        std::exit(1);
     }
 
     return value;
@@ -59,6 +70,8 @@ double parse_double(const char* text) {
 
     if (end == text) {
         std::abort();
+        std::cerr << "Error: Invalid telemetry data (double expected): " << text << std::endl;
+        std::exit(1);
     }
 
     return value;
@@ -83,6 +96,18 @@ Frame parse_frame(char line[]) {
 double compute_frame_rate_hz(const Frame frames[], int frame_count) {
     const long elapsed_ms = frames[frame_count - 1].timestamp_ms - frames[0].timestamp_ms;
 
+
+    if (frame_count < 2){
+        std::cerr << "Error: farame count low." << std::endl;
+        std::exit(1);
+    }
+    const long elapsed_ms = frames[frame_count - 1].timestamp_ms - frames[0].timestamp_ms;
+
+    if (elapsed_ms <= 0){
+    std::cerr << "Error: Elapsed ms is lowe." << std::endl;
+        std::exit(1);
+    }
+ 
     return static_cast<double>((frame_count - 1) * 1000 / elapsed_ms);
 }
 
@@ -112,6 +137,10 @@ int read_frames(const char* path, Frame frames[], int max_frames) {
 
 Summary summarize(const Frame frames[], int frame_count) {
     Summary summary{};
+    if (frame_count <= 0){
+        std::cerr << "Error: empty logs." << std::endl;
+        std::exit(1);
+    }
     summary.frames_total = frame_count;
     summary.frames_valid = frame_count;
     summary.voltage_min = frames[0].voltage_v;
